@@ -46,6 +46,12 @@ func AddBlock(newBlock Block) error {
 	return nil
 }
 
+// GetLastBlock get the last block.
+func GetLastBlock() Block{
+	lastBlock := Blockchain[len(Blockchain)-1]
+	return lastBlock
+}
+
 func (b *Block) calculateHash() []byte {
 	timestamp := []byte(strconv.FormatInt(b.Timestamp, 10))
 	data := []byte(b.Data)
